@@ -51,6 +51,9 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-playground/
-minilibx-linux/
-fract-ol
+libft02.a
+libft00.a
+libft01.a
+
+*test*
+.bonus
