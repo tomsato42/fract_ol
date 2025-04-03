@@ -6,7 +6,7 @@
 /*   By: tomsato <tomsato@student.42.jp>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 07:55:13 by tomsato           #+#    #+#             */
-/*   Updated: 2025/04/03 08:13:10 by tomsato          ###   ########.fr       */
+/*   Updated: 2025/04/03 10:22:13 by tomsato          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,30 @@
 
 typedef struct s_fern_params
 {
-	double	x;
-	double	y;
-	double	next_x;
-	double	next_y;
-	double	scale;
-	double	offset_x;
-	double	offset_y;
-	int		screen_x;
-	int		screen_y;
-	int		color;
-	double	r;
-}			t_fern_params;
+	double		x;
+	double		y;
+	double		next_x;
+	double		next_y;
+	double		scale;
+	double		offset_x;
+	double		offset_y;
+	int			screen_x;
+	int			screen_y;
+	int			color;
+	double		r;
+}				t_fern_params;
+
+unsigned int	my_rand(void)
+{
+	static unsigned int	my_rand_state;
+
+	if (my_rand_state == 0)
+	{
+		my_rand_state = 42;
+	}
+	my_rand_state = (my_rand_state * 1103515245 + 12345) & 0x7fffffff;
+	return (my_rand_state);
+}
 
 void	init_fern_params(t_fern_params *params, t_data *data)
 {
@@ -38,7 +50,7 @@ void	init_fern_params(t_fern_params *params, t_data *data)
 
 void	apply_fern_transform(t_fern_params *params)
 {
-	params->r = (double)rand() / RAND_MAX;
+	params->r = (double)my_rand() / RAND_MAX;
 	if (params->r < 0.01)
 	{
 		params->next_x = 0;

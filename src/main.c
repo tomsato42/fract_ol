@@ -6,7 +6,7 @@
 /*   By: tomsato <tomsato@student.42.jp>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 07:01:25 by tomsato           #+#    #+#             */
-/*   Updated: 2025/04/03 08:37:17 by tomsato          ###   ########.fr       */
+/*   Updated: 2025/04/03 10:21:27 by tomsato          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ int	main(int argc, char **argv)
 	init_fractal_data(&data, argv[1][0]);
 	if (data.fractal_type == 'j' && argc >= 4)
 	{
-		data.c.real = atof(argv[2]);
-		data.c.imag = atof(argv[3]);
+		data.c.real = ft_atof(argv[2]);
+		data.c.imag = ft_atof(argv[3]);
 	}
 	if (data.fractal_type == FRACT_JULIA)
 		draw_julia(&data);

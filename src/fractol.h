@@ -6,7 +6,7 @@
 /*   By: tomsato <tomsato@student.42.jp>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 07:12:57 by tomsato           #+#    #+#             */
-/*   Updated: 2025/04/03 08:58:17 by tomsato          ###   ########.fr       */
+/*   Updated: 2025/04/03 10:22:02 by tomsato          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,6 @@ void			setup_hooks(t_data *data);
 int				auto_zoom(t_data *data);
 void			toggle_auto_zoom(t_data *data);
 void			clean_exit(t_data *data);
+double			ft_atof(const char *str);
 
 #endif
