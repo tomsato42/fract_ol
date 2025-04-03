@@ -6,7 +6,7 @@
 /*   By: tomsato <tomsato@student.42.jp>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:38:15 by tomsato           #+#    #+#             */
-/*   Updated: 2025/04/03 08:42:06 by tomsato          ###   ########.fr       */
+/*   Updated: 2025/04/03 08:57:29 by tomsato          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,7 @@ int	key_hook(int keycode, t_data *data)
 {
 	if (keycode == KEY_ESC)
 	{
-		mlx_destroy_window(data->mlx, data->win);
-		exit(0);
+		clean_exit(data);
 	}
 	else if (keycode == KEY_UP || keycode == KEY_DOWN || keycode == KEY_LEFT
 		|| keycode == KEY_RIGHT)
