@@ -1,4 +1,4 @@
-NAME = fract-ol
+NAME = fract_ol
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -12,6 +12,8 @@ OBJS = $(SRCS:.c=.o)
 
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
+FT_PRINTF_DIR = ft_printf
+FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 
 LINKER = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
 
@@ -23,11 +25,14 @@ all: $(NAME)
 $(MLX):
 	$(MAKE) -C $(MLX_DIR)
 
-$(NAME): $(MLX) $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(LINKER) -o $(NAME)
+$(NAME): $(MLX) $(OBJS) $(LIBFT) $(FT_PRINTF)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(FT_PRINTF) $(LINKER) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(FT_PRINTF):
+	$(MAKE) -C $(FT_PRINTF_DIR)
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)

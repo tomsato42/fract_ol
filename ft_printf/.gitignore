@@ -51,7 +51,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-playground/
-minilibx-linux/
-fract-ol
-fract_ol
+
+*test*
+.DS_Store
+
+printfTester/
